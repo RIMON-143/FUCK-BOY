@@ -8,7 +8,7 @@ import hashlib
 from faker import Faker
 import os
 os.system('clear')
-print(f"""\033[1;32m
+logo = (f"""\033[1;32m
    88""Yb 88 8b    d8  dP"Yb  88b 88 
    88__dP 88 88b  d88 dP   Yb 88Yb88 
    88"Yb  88 88YbdP88 Yb   dP 88 Y88 
@@ -75,8 +75,10 @@ def register_facebook_account(email, password, first_name, last_name, birthday, 
     reg = _call(api_url, req, proxy)
     id = reg['new_user_id']
     token = reg['session_info']['access_token']
+    os.system('clear')
+    print(logo)
     print(f'''
-\x1b[1;97m━━━━━━━━━━\x1b[1;93mCREAT ID━━━━━━━━━━
+\x1b[1;97m━━━━━━━━━━\x1b[1;93mCREAT ID━━━━━━━━━━'
 \33[1;91m[\33[1;97m=\33[1;91m] \33[1;92mEMAIL    \33[1;37m: \33[1;32m{email}
 \33[1;91m[\33[1;97m=\33[1;91m] \33[1;92mUID      \33[1;37m: \33[1;32m{id}
 \33[1;91m[\33[1;97m=\33[1;91m] \33[1;92mPASSWORD \33[1;37m: \33[1;32m{password}
