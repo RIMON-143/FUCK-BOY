@@ -8,7 +8,7 @@ import hashlib
 from faker import Faker
 import os
 os.system('clear')
-logo = (f"""\033[1;32m
+print(f"""\033[1;32m
    88""Yb 88 8b    d8  dP"Yb  88b 88 
    88__dP 88 88b  d88 dP   Yb 88Yb88 
    88"Yb  88 88YbdP88 Yb   dP 88 Y88 
@@ -141,8 +141,6 @@ working_proxies = get_working_proxies()
 
 if not working_proxies:
     print('[×] No working proxies found. Please check your proxies.')
-    os.system('clear')
-    print(logo)
 else:
     for i in range(int(input('\33[1;91m[\33[1;97m=\33[1;91m] \33[1;92mHow Many Accounts You Want \33[1;37m: \33[1;32m '))):
         proxy = random.choice(working_proxies)
