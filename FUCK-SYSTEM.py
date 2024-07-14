@@ -75,10 +75,8 @@ def register_facebook_account(email, password, first_name, last_name, birthday, 
     reg = _call(api_url, req, proxy)
     id = reg['new_user_id']
     token = reg['session_info']['access_token']
-    os.system('clear')
-    print(logo)
     print(f'''
-\x1b[1;97m━━━━━━━━━━\x1b[1;93mCREAT ID━━━━━━━━━━'
+\x1b[1;97m━━━━━━━━━━\x1b[1;93mCREAT ID━━━━━━━━━━
 \33[1;91m[\33[1;97m=\33[1;91m] \33[1;92mEMAIL    \33[1;37m: \33[1;32m{email}
 \33[1;91m[\33[1;97m=\33[1;91m] \33[1;92mUID      \33[1;37m: \33[1;32m{id}
 \33[1;91m[\33[1;97m=\33[1;91m] \33[1;92mPASSWORD \33[1;37m: \33[1;32m{password}
@@ -143,6 +141,8 @@ working_proxies = get_working_proxies()
 
 if not working_proxies:
     print('[×] No working proxies found. Please check your proxies.')
+    os.system('clear')
+    print(logo)
 else:
     for i in range(int(input('\33[1;91m[\33[1;97m=\33[1;91m] \33[1;92mHow Many Accounts You Want \33[1;37m: \33[1;32m '))):
         proxy = random.choice(working_proxies)
